@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  web:
+    image: richarvey/nginx-php-fpm:latest
+    volumes:
+      - ./:/var/www/html
+      - ./docker/web:/etc/nginx/sites-enabled
+    ports:
+      - 8000:80
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5
+    volumes:
+      - ./docker/db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: est
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+
+volumes:
+  db:
+    external: false
