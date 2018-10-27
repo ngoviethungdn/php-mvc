@@ -9,6 +9,37 @@
 
 <body>
 <main role="main" class="container">
+    <form id="form-work" class="row">
+        <div class="form-group col-sm-4">
+            <label>Work name</label>
+            <input type="name" class="form-control" id="name" placeholder="Enter work name" required>
+        </div>
+        <div class="form-group col-sm-4">
+            <label>Starting Date - Ending Date</label>
+            <input class="form-control" id="date-picker">
+        </div>
+        <div class="form-group col-sm-2">
+            <label>Status</label>
+            <select class="custom-select" id="status">
+                <option value="1" selected>Planning</option>
+                <option value="2">Doing</option>
+                <option value="3">Complete</option>
+            </select>
+        </div>
+        <div class="form-group col-sm-2">
+            <br/>
+            <button id="submit" type="submit" class="btn btn-success">Save</button>
+            <button id="cancel" type="button" class="btn btn-dark" style="display: none">Cancel</button>
+        </div>
+    </form>
+    <div id="errors">
+    </div>
+    <div class="row">
+        <h6>Status: <i>Planning is blue color</i>, <i>Doing is Green color</i>, <i>Complete is pink color</i></h6>
+    </div>
+    <div class="row">
+        <div id='calendar'></div>
+    </div>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
